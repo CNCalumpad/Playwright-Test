@@ -9,19 +9,21 @@ test('Go to URL', async ({ page }) => {
 
 test('Successful registration', async ({ page }) => {
   await page.goto('https://practice.expandtesting.com/register');
-  
+
+  const username = `testuser-${Date.now()}`;
+
   // Fill in the registration form fields and submit
-    await page.fill('#username', 'adfaf2');
-    await page.fill('#password', '1234');
-    await page.fill('#confirmPassword', '1234');
-    await page.click('button[type="submit"]');
+  await page.fill('#username', username);
+  await page.fill('#password', 'Password123!');
+  await page.fill('#confirmPassword', 'Password123!');
+  await page.click('button[type="submit"]');
 
   // Expect to be redirected to the login page after successful registration
-    await expect(page).toHaveURL('https://practice.expandtesting.com/login');
+  await expect(page).toHaveURL('https://practice.expandtesting.com/login');
 
   // Expect a success message to be visible
-    await expect(page.locator('#flash')).toBeVisible();
-    await expect(page.locator('#flash')).toContainText('Successfully registered, you can log in now.');
+  await expect(page.locator('#flash')).toBeVisible();
+  await expect(page.locator('#flash')).toContainText('Successfully registered, you can log in now.');
 })
 
 test('Registration with missing password', async ({ page }) => {

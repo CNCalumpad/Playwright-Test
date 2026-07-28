@@ -11,7 +11,7 @@ test('Successful registration', async ({ page }) => {
   await page.goto('https://practice.expandtesting.com/register');
   
   // Fill in the registration form fields and submit
-    await page.fill('#username', 'kwasonggg12623');
+    await page.fill('#username', 'wOHfaa2413');
     await page.fill('#password', 'NewUserPassword!');
     await page.fill('#confirmPassword', 'NewUserPassword!');
     await page.click('button[type="submit"]');

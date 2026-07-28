@@ -11,9 +11,9 @@ test('Successful registration', async ({ page }) => {
   await page.goto('https://practice.expandtesting.com/register');
   
   // Fill in the registration form fields and submit
-    await page.fill('#username', 'wOHfaa2413');
-    await page.fill('#password', 'NewUserPassword!');
-    await page.fill('#confirmPassword', 'NewUserPassword!');
+    await page.fill('#username', 'adfaf2');
+    await page.fill('#password', '1234');
+    await page.fill('#confirmPassword', '1234');
     await page.click('button[type="submit"]');
 
   // Expect to be redirected to the login page after successful registration
